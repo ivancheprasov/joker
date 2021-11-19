@@ -1,0 +1,9 @@
+@import "../../const";
+
+.text-area {
+  border: 2px solid $darkGray;
+  border-radius: 15px;
+  &.text-area-error {
+    border-color: red;
+  }
+}

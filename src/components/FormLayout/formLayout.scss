@@ -1,0 +1,25 @@
+@import "../../const";
+
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.form {
+  background-color: white;
+  min-width: 60%;
+  padding: 40px;
+  border: 2px solid $darkGray;
+  border-radius: 15px;
+}
+
+.form-header {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  span {
+    font-size: 25px;
+  }
+}

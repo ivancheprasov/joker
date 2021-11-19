@@ -1,0 +1,22 @@
+@import "../../const";
+
+.form-footer {
+  margin: auto;
+  max-width: 20%;
+  display: flex;
+  flex-flow: row wrap;
+  span {
+    margin-right: 5px;
+    color: black;
+  }
+  a span{
+    margin: 0;
+    color: $turquoise;
+    text-decoration: underline;
+    text-decoration-color: $turquoise;
+    &:hover {
+      color: $hoverTurquoise;
+      text-decoration-color: $hoverTurquoise;
+    }
+  }
+}

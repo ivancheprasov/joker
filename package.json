@@ -1,0 +1,50 @@
+{
+  "name": "joker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start-client && npm run start-server",
+    "build": "react-scripts build",
+    "start-client": "PORT=8000 react-scripts start",
+    "start-server": "PORT=3000 node ./server/index.js"
+  },
+  "proxy": "http://localhost:3000",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "deepai": "^1.0.17",
+    "express": "^4.17.1",
+    "formik": "^2.2.9",
+    "js-cookie": "^3.0.1",
+    "node-sass": "^6.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.0.1",
+    "react-router-dom": "^6.0.1",
+    "react-scripts": "^4.0.3",
+    "redux-thunk": "^2.4.0",
+    "yup": "^0.32.11"
+  },
+  "_id": "joker@1.0.0",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../mixin";
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-button {
+  @include button;
+  padding: 15px;
+  width: 20%;
+  margin: 4% auto 2%;
+  font-size: 20px;
+}

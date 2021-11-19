@@ -1,0 +1,24 @@
+@import "../../mixin";
+
+.generate-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.generate-form_input {
+  font-size: 18px;
+  width: 60%;
+  min-height: 150px;
+  margin: 0 auto 4%;
+  padding: 20px;
+}
+
+.generate-form_button {
+  @include button;
+  padding: 15px;
+  width: 40%;
+  margin: 4% auto 2%;
+  font-size: 20px;
+}
+

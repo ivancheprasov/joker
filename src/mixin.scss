@@ -1,0 +1,16 @@
+@import "const";
+
+@mixin button {
+  background-color: $turquoise;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  text-decoration: none;
+  &:hover {
+    background-color: $hoverTurquoise;
+  }
+  &:focus {
+    outline: none;
+  }
+  cursor: pointer;
+}

@@ -1,0 +1,55 @@
+@import "../../const";
+
+.mode-switch {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  font-size: 18px;
+
+  input {
+    display: none;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+
+    &:before {
+      display: flex;
+      flex-shrink: 0;
+      content: "";
+      background-color: white;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.375em;
+      transition: 0.25s ease;
+      box-shadow: inset 0 0 0 0.25em white;
+      border: 2px solid $darkGray;
+    }
+
+    &.is-selected {
+      &:before {
+        background-color: $turquoise;
+        border-color: $turquoise;
+      }
+      &:hover {
+        &:before {
+          background-color: $hoverTurquoise;
+        }
+      }
+    }
+    &:hover {
+      color: $hoverTurquoise;
+      &:before {
+        border-color: $hoverTurquoise;
+      }
+    }
+  }
+}
