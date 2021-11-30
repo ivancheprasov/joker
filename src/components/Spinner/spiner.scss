@@ -1,0 +1,10 @@
+@import "../../const";
+
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10% auto;
+  .MuiCircularProgress-root {
+    color: $turquoise;
+  }
+}

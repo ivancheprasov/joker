@@ -1,9 +1,9 @@
-let Router = require('express').Router;
-let generateController = require('../controllers/generate');
+const Router = require('express').Router;
+const generateController = require('../controllers/generate');
 
 module.exports = (app) => {
-    const userRoutes = new Router();
-    userRoutes
+    const generateRoutes = new Router();
+    generateRoutes
         .post('/', generateController.generate)
-    return userRoutes;
+    return generateRoutes;
 };

@@ -3,41 +3,51 @@ import * as Yup from "yup";
 import ModeSwitch from "../../components/ModeSwitch";
 import {generate, isShowingResult, setSelectedOption} from "../../redux/generateFormSlice";
 import {useDispatch, useSelector} from "react-redux";
+import CustomSelect from "../../components/CustomSelect";
+import Spinner from "../../components/Spinner";
 import "../../app.scss";
-import TextArea from "../../components/TextArea";
 
-const TextAreaForm = () => {
+const TemplateUsageForm = () => {
     const dispatch = useDispatch();
     const {selectedOption} = useSelector(state => state.generateForm);
+    const {categories, isLoaded} = useSelector(state => state.categories);
     return (
         <Formik
             initialValues={
                 {
-                    input: ""
+                    category: ""
                 }
             }
             validationSchema={
                 Yup.object().shape({
-                    input: Yup.string().required()
+                    category: Yup.string().required()
                 })}
             onSubmit={
                 (values) => {
                     dispatch(isShowingResult(true));
                     dispatch(generate({
-                        mode: "text",
-                        input: values.input
+                        mode: "template",
+                        category: values.category
                     }))
                 }
             }
         >
             {({isSubmitting}) => (
                 <Form className={"common-form"}>
-                    <Field
-                        name={"input"}
-                        className={"common-form_input"}
-                        placeholder={"The start of the new joke"}
-                        component={TextArea}
-                    />
+                    {
+                        isLoaded ?
+                            <Field
+                                name={"category"}
+                                className={"common-form_select"}
+                                label={"Category"}
+                                placeholder={"Select a category"}
+                                options={categories}
+                                hasCategories={true}
+                                component={CustomSelect}
+                            />
+                            :
+                            <Spinner/>
+                    }
                     <ModeSwitch
                         firstLabel={"use text input"}
                         secondLabel={"use template"}
@@ -57,4 +67,4 @@ const TextAreaForm = () => {
     );
 };
 
-export default TextAreaForm;
+export default TemplateUsageForm;

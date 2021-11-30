@@ -15,11 +15,15 @@ const generateFormSlice = createSlice({
         usedTemplate: null,
         result: null,
         isSuccessful: false,
-        selectedOption: ""
+        selectedOption: "",
+        isShowingResult: false
     },
     reducers: {
         setSelectedOption(state, action) {
             state.selectedOption = action.payload;
+        },
+        isShowingResult(state, action) {
+            state.isShowingResult = action.payload;
         }
     },
     extraReducers: {
@@ -42,7 +46,8 @@ const generateFormSlice = createSlice({
 });
 
 export const {
-    setSelectedOption
+    setSelectedOption,
+    isShowingResult
 } = generateFormSlice.actions
 
 export default generateFormSlice.reducer;

@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import userSlice from "./userSlice";
 import headerSlice from "./headerSlice";
 import generateFormSlice from "./generateFormSlice";
+import categoriesSlice from "./categoriesSlice";
 
 const rootReducer = combineReducers({
     user: userSlice,
     header: headerSlice,
-    generateForm: generateFormSlice
+    generateForm: generateFormSlice,
+    categories: categoriesSlice
 });
 
 const store = configureStore({

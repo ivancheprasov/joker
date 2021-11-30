@@ -3,12 +3,16 @@
 .mode-switch {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 40%;
+  margin: auto;
 }
 
 .option {
+  min-width: 40%;
   font-size: 18px;
+  margin: 5px 0 5px 10%;
 
   input {
     display: none;
@@ -18,7 +22,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin: 0 10px;
 
     &:before {
       display: flex;
@@ -39,14 +42,17 @@
         background-color: $turquoise;
         border-color: $turquoise;
       }
+
       &:hover {
         &:before {
           background-color: $hoverTurquoise;
         }
       }
     }
+
     &:hover {
       color: $hoverTurquoise;
+
       &:before {
         border-color: $hoverTurquoise;
       }

@@ -1,0 +1,44 @@
+@import "../../const";
+
+.MuiOutlinedInput-root {
+  border-radius: 15px !important;
+}
+
+fieldset {
+  border: 2px solid $darkGray !important;
+}
+
+.MuiFormControl-root {
+  width: 100%;
+}
+
+.Mui-focused {
+  .MuiOutlinedInput-notchedOutline {
+    border: 2px solid $turquoise !important;
+  }
+}
+
+label {
+  &.Mui-focused {
+    color: $turquoise !important;
+  }
+}
+
+.MuiOutlinedInput-root:hover {
+  .MuiOutlinedInput-notchedOutline {
+    border-color: $hoverTurquoise !important;
+  }
+}
+
+.text-field-wrapper {
+  display: flex;
+  width: 65%;
+  justify-content: center;
+  margin: 0 auto 4%;
+}
+
+.text-field-error {
+  fieldset {
+    border-color: red !important;
+  }
+}

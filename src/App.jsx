@@ -7,6 +7,7 @@ import SignUp from "./pages/SignUp";
 import Generate from "./pages/Generate";
 import Templates from "./pages/Templates";
 import Categories from "./pages/Categories";
+import "./app.scss";
 
 const App = (props) => {
     return (
