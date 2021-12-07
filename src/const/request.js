@@ -4,5 +4,7 @@ export const requestURL = {
     register: "/api/user/register",
     generate: "/api/generate",
     loadCategories: "/api/categories",
-    addCategory: "/api/categories/add"
+    addCategory: "/api/categories/add",
+    suggestCategories: "/api/templates/suggest",
+    addTemplate: "/api/templates/add"
 };

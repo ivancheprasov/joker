@@ -16,10 +16,17 @@ const categoriesSlice = createSlice({
     name: "categories",
     initialState: {
         isLoaded: false,
-        isSuccessful: false,
+        isLoadSuccessful: false,
+        isAddPending: false,
+        isAddSuccessful: false,
         categories: []
     },
-    reducers: {},
+    reducers: {
+        resetAddSuccess(state) {
+            state.isAddPending = false;
+            state.isAddSuccessful = false;
+        }
+    },
     extraReducers: {
         [loadCategories.pending]: (state) => {
             state.isLoaded = false;
@@ -27,14 +34,30 @@ const categoriesSlice = createSlice({
         [loadCategories.fulfilled]: (state, action) => {
             const {categories} = action.payload;
             state.isLoaded = true;
-            state.isSuccessful = true;
+            state.isLoadSuccessful = true;
             state.categories = categories;
         },
         [loadCategories.rejected]: (state) => {
             state.isLoaded = true;
-            state.isSuccessful = false;
+            state.isLoadSuccessful = false;
         },
+        [addCategory.pending]: (state) => {
+            state.isAddPending = true;
+            state.isAddSuccessful = false;
+        },
+        [addCategory.fulfilled]: (state) => {
+            state.isAddPending = false;
+            state.isAddSuccessful = true;
+        },
+        [addCategory.rejected]: (state) => {
+            state.isAddPending = false;
+            state.isAddSuccessful = false;
+        }
     }
 });
+
+export const {
+    resetAddSuccess
+} = categoriesSlice.actions
 
 export default categoriesSlice.reducer;

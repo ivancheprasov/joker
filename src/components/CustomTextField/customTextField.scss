@@ -32,7 +32,7 @@ label {
 
 .text-field-wrapper {
   display: flex;
-  width: 65%;
+  width: calc(60% + 40px);
   justify-content: center;
   margin: 0 auto 4%;
 }

@@ -4,12 +4,14 @@ import userSlice from "./userSlice";
 import headerSlice from "./headerSlice";
 import generateFormSlice from "./generateFormSlice";
 import categoriesSlice from "./categoriesSlice";
+import templatesSlice from "./templatesSlice";
 
 const rootReducer = combineReducers({
     user: userSlice,
     header: headerSlice,
     generateForm: generateFormSlice,
-    categories: categoriesSlice
+    categories: categoriesSlice,
+    templates: templatesSlice
 });
 
 const store = configureStore({
