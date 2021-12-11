@@ -1,3 +1,5 @@
 # Project exclude paths
 /node_modules/
 /server/config/local-config.js
+/server/config/googleKey.json
+/.env

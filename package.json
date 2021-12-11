@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@emotion/styled": "^11.6.0",
+    "@google-cloud/language": "^4.3.2",
     "@mui/material": "^5.2.1",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.24.0",
@@ -22,6 +23,7 @@
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "deepai": "^1.0.17",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "formik": "^2.2.9",
     "js-cookie": "^3.0.1",
@@ -35,6 +37,7 @@
     "react-router-dom": "^6.0.1",
     "react-scripts": "^4.0.3",
     "redux-thunk": "^2.4.0",
+    "serve-static": "^1.14.1",
     "yup": "^0.32.11"
   },
   "_id": "joker@1.0.0",
