@@ -19,6 +19,7 @@ const templatesSlice = createSlice({
         isAddPending: false,
         isAddSuccessful: false,
         hasSuggestedCategories: false,
+        newTemplateBody: "",
         suggestedCategories: []
     },
     reducers: {
@@ -26,9 +27,11 @@ const templatesSlice = createSlice({
             state.isAddPending = false;
             state.isAddSuccessful = false;
         },
-        isSuggestingCategories(state, action) {
+        setNewTemplateBody(state, action) {
+            state.newTemplateBody = action.payload;
+        },
+        isShowingSuggestedCategories(state, action) {
             state.hasSuggestedCategories = action.payload;
-            state.suggestedCategories = [];
         }
     },
     extraReducers: {
@@ -63,7 +66,8 @@ const templatesSlice = createSlice({
 
 export const {
     resetAddSuccess,
-    isSuggestingCategories
+    isShowingSuggestedCategories,
+    setNewTemplateBody
 } = templatesSlice.actions
 
 export default templatesSlice.reducer;

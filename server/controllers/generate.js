@@ -10,7 +10,7 @@ exports.generate = (req, res) => {
         }).then(response => {
             res.json({usedTemplate: input, result: getGeneratedResult(response.output)});
         }).catch(error => {
-
+            res.status(500).end();
         });
     } else {
         const {category} = req.body;
@@ -22,7 +22,7 @@ exports.generate = (req, res) => {
         }).then(response => {
             res.json({usedTemplate: template, result: getGeneratedResult(response.output)});
         }).catch(error => {
-
+            res.status(500).end();
         });
     }
 };

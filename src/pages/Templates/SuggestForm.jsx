@@ -3,7 +3,12 @@ import {Field, Form, Formik} from "formik";
 import TextArea from "../../components/TextArea";
 import {useDispatch} from "react-redux";
 import "../../app.scss";
-import {isSuggestingCategories, suggestCategories} from "../../redux/templatesSlice";
+import {
+    isShowingSuggestedCategories,
+    resetAddSuccess,
+    setNewTemplateBody,
+    suggestCategories
+} from "../../redux/templatesSlice";
 
 const SuggestForm = () => {
     const dispatch = useDispatch();
@@ -20,7 +25,9 @@ const SuggestForm = () => {
                 })}
             onSubmit={
                 (values) => {
-                    dispatch(isSuggestingCategories(true));
+                    dispatch(resetAddSuccess());
+                    dispatch(setNewTemplateBody(values.input));
+                    dispatch(isShowingSuggestedCategories(true));
                     dispatch(suggestCategories({
                         input: values.input
                     }));
