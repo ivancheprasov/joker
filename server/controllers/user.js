@@ -25,7 +25,7 @@ exports.login = async (req, res) => {
     const user = await selectUser(username);
     if (user) {
         if (checkPassword(password, user.password)) {
-            res.json({username, isSuperuser: user.is_superuser});
+            res.json({username, password, isSuperuser: user.is_superuser});
         } else {
             res.status(403).end();
         }
