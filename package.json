@@ -2,17 +2,18 @@
   "name": "joker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "npm run start-client && npm run start-server",
-    "build": "react-scripts build",
-    "start-client": "PORT=8000 react-scripts start",
-    "start-server": "PORT=3000 node ./server/index.js"
+    "start": "node server/index.js",
+    "build": "react-scripts build"
   },
   "proxy": "http://localhost:3000",
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
   "dependencies": {
     "@emotion/styled": "^11.6.0",
     "@google-cloud/language": "^4.3.2",

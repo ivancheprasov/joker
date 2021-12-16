@@ -1,7 +1,7 @@
 import MainLayout from "../../components/MainLayout";
 import {useDispatch, useSelector} from "react-redux";
 import FormLayout from "../../components/FormLayout";
-import {setSelectedOption} from "../../redux/generateFormSlice";
+import {isShowingResult, setSelectedOption} from "../../redux/generateFormSlice";
 import {useEffect} from "react";
 import TextAreaForm from "./TextAreaForm";
 import TemplateUsageForm from "./TemplateUsageForm";
@@ -11,15 +11,16 @@ import Spinner from "../../components/Spinner";
 
 const Generate = () => {
     const dispatch = useDispatch();
-    const {selectedOption, isLoaded, isSuccessful, isShowingResult} = useSelector(state => state.generateForm);
+    const {selectedOption, isLoaded, isSuccessful, isShowingResult: hasResult} = useSelector(state => state.generateForm);
     useEffect(() => {
+        dispatch(isShowingResult(false))
         dispatch(setSelectedOption("use text input"));
         dispatch(loadCategories());
     }, []);
     return (
         <MainLayout>
             {
-                isShowingResult ?
+                hasResult ?
                     <FormLayout title={"Your result"}>
                         {
                             isLoaded && isSuccessful ?
